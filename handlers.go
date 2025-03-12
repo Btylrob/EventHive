@@ -67,8 +67,8 @@ func welcomeHandler(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "welcome.html")
 }
 
-func joinHandler(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "captcha.html")
+func createHandler(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, "create.html")
 }
 
 // Helper function to render templates
