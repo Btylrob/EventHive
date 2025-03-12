@@ -67,6 +67,10 @@ func welcomeHandler(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, "welcome.html")
 }
 
+func joinHandler(w http.ResponseWriter, r *http.Request) {
+	renderTemplate(w, "captcha.html")
+}
+
 // Helper function to render templates
 func renderTemplate(w http.ResponseWriter, filename string) {
 	tmpl, err := template.ParseFiles(filename)
