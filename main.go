@@ -13,6 +13,7 @@ func main() {
 	http.HandleFunc("/signup", signupHandler)
 	http.HandleFunc("/login", loginHandler)
 	http.HandleFunc("/welcome", welcomeHandler)
+	http.HandleFunc("/create", createHandler)
 
 	// Start the server
 	log.Println("Server started at http://localhost:8080")
