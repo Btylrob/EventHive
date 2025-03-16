@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Dashboard</title>
+    <style>
+        body {
+            background-color: #f3f4f6;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        aside {
+            width: 250px;
+            background-color: #1e3a8a;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav li {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+        }
+        nav span {
+            margin-right: 10px;
+        }
+        .add-button {
+            background-color: white;
+            color: #1e3a8a;
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+        }
+        .chat-list {
+            width: 30%;
+            padding-right: 20px;
+        }
+        .chat-window {
+            width: 70%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+        .chat-header, .chat-footer {
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .chat-footer {
+            border-top: 1px solid #ddd;
+            border-bottom: none;
+            padding-top: 10px;
+        }
+        .chat-messages {
+            flex: 1;
+            padding: 20px 0;
+            overflow-y: auto;
+        }
+        .message {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .message img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .message-content {
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 60%;
+        }
+        .received .message-content {
+            background-color: #10b981;
+            color: white;
+        }
+        .sent .message-content {
+            background-color: #d1d5db;
+        }
+        .sent {
+            justify-content: flex-end;
+        }
+        input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <div>
+            <h1>Synthara.ai</h1>
+            <nav>
+                <ul>
+                    <li><span>🏠</span> Home</li>
+                    <li><span>📩</span> Inbox</li>
+                    <li><span>📅</span> Calendar</li>
+                    <li><span>📊</span> Dashboard</li>
+                    <li><span>👥</span> Teams</li>
+                    <li><span>👤</span> User</li>
+                </ul>
+            </nav>
+        </div>
+        <button class="add-button">+</button>
+    </aside>
+    <main>
+        <section class="chat-list">
+            <h2>Recent Chat</h2>
+            <div class="chat-preview">
+                <div class="message">
+                    <img src="https://via.placeholder.com/40">
+                    <div>
+                        <h3>Name Here</h3>
+                        <p>Lorem ipsum dolor sit amet...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="chat-window">
+            <div class="chat-header">
+                <img src="https://via.placeholder.com/40">
+                <div>
+                    <h3>Name Here</h3>
+                    <span style="color:green; font-size:small;">Online</span>
+                </div>
+            </div>
+            <div class="chat-messages">
+                <div class="message received">
+                    <img src="https://via.placeholder.com/30">
+                    <div class="message-content">Hello!</div>
+                </div>
+                <div class="message sent">
+                    <div class="message-content">Hi there!</div>
+                    <img src="https://via.placeholder.com/30">
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Say something...">
+                <button>💬</button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

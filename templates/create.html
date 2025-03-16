@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+
+    <style>
+        body {
+            background: #090909;
+            font-family: 'Arial', sans-serif;
+            color: white;
+        }
+        .neon-text {
+            text-shadow: 0px 0px 5px #ff00ff, 0px 0px 10px #ff00ff, 0px 0px 20px #ff00ff;
+        }
+        .glow-btn {
+            background: linear-gradient(90deg, #ff00ff, #ff0099);
+            box-shadow: 0px 0px 15px #ff00ff;
+            transition: all 0.3s ease-in-out;
+        }
+        .glow-btn:hover {
+            background: linear-gradient(90deg, #ff0099, #ff00ff);
+            box-shadow: 0px 0px 25px #ff00ff;
+            transform: scale(1.05);
+        }
+        .assistant-img {
+            width: 200px;
+            height: 310px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px #ff00ff;
+            transition: transform 0.3s ease-in-out;
+        }
+        .assistant-img:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen items-center justify-center text-center px-6">
+
+    <h1 class="text-5xl font-extrabold neon-text">Select Your AI Assistant</h1>
+    <p class="mt-4 text-lg text-gray-400">Choose between an anime-style or a real AI-generated assistant.</p>
+
+    <!-- Selection Options -->
+    <div class="flex gap-16 mt-10">
+        <!-- Anime AI Option -->
+        <div class="flex flex-col items-center">
+            <img src="media/anime1.jpg" alt="Anime AI" class="assistant-img">
+            <a href="/select?ai=anime" class="glow-btn px-8 py-4 text-lg font-bold rounded-lg text-white mt-4">
+                Anime AI
+            </a>
+        </div>
+
+        <!-- Real AI Option -->
+        <div class="flex flex-col items-center">
+            <img src="media/real1.jpg" alt="Real AI" class="assistant-img">
+            <a href="/welcome" class="glow-btn px-8 py-4 text-lg font-bold rounded-lg text-white mt-4">
+                Real AI
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-6 text-gray-400 text-sm absolute bottom-4">
+        &copy; 2025 synthara.ai . .
+    </footer>
+
+</body>
+</html>
