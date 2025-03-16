@@ -29,11 +29,10 @@ func signupHandler(w http.ResponseWriter, r *http.Request) {
 
 		http.Redirect(w, r, "/login", http.StatusSeeOther)
 	} else {
-		renderTemplate(w, "signup.html")
+		renderTemplate(w, "templates/signup.html")
 	}
 }
 
-// Login Handler
 func loginHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == http.MethodPost {
 		username := r.FormValue("username")
@@ -58,24 +57,26 @@ func loginHandler(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, "Invalid username or password", http.StatusUnauthorized)
 		}
 	} else {
-		renderTemplate(w, "login.html")
+		renderTemplate(w, "templates/login.html")
 	}
 }
 
 // Welcome page
 func welcomeHandler(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "welcome.html")
+	renderTemplate(w, "templates/welcome.html")
 }
 
 func createHandler(w http.ResponseWriter, r *http.Request) {
-	renderTemplate(w, "create.html")
+	renderTemplate(w, "templates/create.html")
 }
 
 // Helper function to render templates
 func renderTemplate(w http.ResponseWriter, filename string) {
 	tmpl, err := template.ParseFiles(filename)
 	if err != nil {
-		log.Fatal(err)
+		http.Error(w, "Error loading page", http.StatusInternalServerError)
+		log.Println("Template error:", err)
+		return
 	}
 	tmpl.Execute(w, nil)
 }
