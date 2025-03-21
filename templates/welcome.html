@@ -3,172 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Dashboard</title>
-    <style>
-        body {
-            background-color: #f3f4f6;
-            display: flex;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        aside {
-            width: 250px;
-            background-color: #1e3a8a;
-            color: white;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-        }
-        nav li {
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-        }
-        nav span {
-            margin-right: 10px;
-        }
-        .add-button {
-            background-color: white;
-            color: #1e3a8a;
-            padding: 10px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-        }
-        main {
-            flex: 1;
-            padding: 20px;
-            display: flex;
-        }
-        .chat-list {
-            width: 30%;
-            padding-right: 20px;
-        }
-        .chat-window {
-            width: 70%;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-        }
-        .chat-header, .chat-footer {
-            display: flex;
-            align-items: center;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        .chat-footer {
-            border-top: 1px solid #ddd;
-            border-bottom: none;
-            padding-top: 10px;
-        }
-        .chat-messages {
-            flex: 1;
-            padding: 20px 0;
-            overflow-y: auto;
-        }
-        .message {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        .message img {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            object-fit: fill;
-        }
-        .message-content {
-            padding: 10px;
-            border-radius: 8px;
-            max-width: 60%;
-        }
-        .received .message-content {
-            background-color: #32CD32;
-            color: white;
-        }
-        .sent .message-content {
-            background-color: #d1d5db;
-        }
-        .sent {
-            justify-content: flex-end;
-        }
-        input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        button {
-            background: none;
-            border: none;
-            font-size: 20px;
-            cursor: pointer;
-        }
-    </style>
+    <title>AI Chatbot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <aside>
-        <div>
-            <h1>Synthara.ai</h1>
-            <nav>
-                <ul>
-                    <li><span>🏠</span> Home</li>
-                    <li><span>📩</span> Inbox</li>
-                    <li><span>📅</span> Calendar</li>
-                    <li><span>📊</span> Dashboard</li>
-                    <li><span>👥</span> Teams</li>
-                    <li><span>👤</span> User</li>
-                </ul>
-            </nav>
+<body class="bg-gray-900 text-white">
+    <!-- Hero Section -->
+    <section class="text-center py-20 bg-gradient-to-r from-black via-gray-800 to-purple-900 text-white">
+        <h1 class="text-5xl font-bold">Meet Synthara Your AI Assistant</h1>
+        <p class="mt-4 text-lg">Your personal assistant and companion.</p>
+        <button class="mt-6 px-6 py-3 text-lg bg-purple-500 hover:bg-purple-700 text-white rounded-full shadow-lg">Try Now</button>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gradient-to-r from-gray-800 to-black text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold">Why Use Our Chatbot?</h2>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-700 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold">Natural Conversations</h3>
+                    <p class="mt-2 text-gray-300">Engage with AI like never before.</p>
+                </div>
+                <div class="p-6 bg-gray-700 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold">AI-Powered Assistance</h3>
+                    <p class="mt-2 text-gray-300">Synthara is always ready at your disposal as office assistant and friend.</p>
+                </div>
+                <div class="p-6 bg-gray-700 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold">Customizable & Smart</h3>
+                    <p class="mt-2 text-gray-300">Design to your own tastes and personality with many more models coming soon.</p>
+                </div>
+            </div>
         </div>
-    </aside>
-    <main>
-        <section class="chat-list">
-            <h2>Recent Chat</h2>
-            <div class="chat-preview">
-                <div class="message">
-                    <img src="media/anime1.jpg">
-                    <div>
-                        <h3>Synthara</h3>
-                        <p>Lorem ipsum dolor sit amet...</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="chat-window">
-            <div class="chat-header">
-                <img src="https://via.placeholder.com/40">
-                <div>
-                    <h3>Name Here</h3>
-                    <span style="color:green; font-size:small;">Online</span>
-                </div>
-            </div>
-            <div class="chat-messages">
-                <div class="message received">
-                    <img src="https://via.placeholder.com/30">
-                    <div class="message-content">Hello!</div>
-                </div>
-                <div class="message sent">
-                    <div class="message-content">Hi Synthara!</div>
-                    <img src="https://via.placeholder.com/30">
-                </div>
-            </div>
-            <div class="chat-footer">
-                <input type="text" placeholder="Say something...">
-                <button>💬</button>
-            </div>
-        </section>
-    </main>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 text-center bg-gradient-to-r from-purple-900 via-gray-800 to-black text-white">
+        <h2 class="text-3xl font-bold">Ready to Get Started?</h2>
+        <p class="mt-4">Sign up today and integrate AI into your workflow.</p>
+        <button class="mt-6 px-6 py-3 text-lg bg-purple-500 hover:bg-purple-700 text-white rounded-full shadow-lg">Get Started</button>
+    </section>
+
+    </section>
+<!-- Reach us Here and Socials -->
+<section class="text-center py-20 bg-gradient-to-r from-black via-gray-800 to-purple-900 text-white">
+  <div class="grid grid-cols-3 gap-4">
+  <ul>
+    <li><strong>Website</strong></li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <ul>
+    <li><strong>Resources</strong></li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+  <ul>
+    <li><strong>Social</strong></li>
+    <li>Item B</li>
+    <li>Item C</li>
+  </ul>
+</div>
+
+
+
 </body>
 </html>
